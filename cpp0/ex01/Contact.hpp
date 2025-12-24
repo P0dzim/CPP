@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitosant <vitosant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 11:45:01 by vitosant          #+#    #+#             */
-/*   Updated: 2025/12/17 14:22:55 by vitosant         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:08:36 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ class Contact {
 		void setPhoneNum(const std::string& fname);
 		const std::string& getSecret() const;
 		void setSecret(const std::string& fname);
+		void showContact(void) const;
 };

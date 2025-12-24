@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitosant <vitosant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 11:55:55 by vitosant          #+#    #+#             */
-/*   Updated: 2025/12/17 14:17:55 by vitosant         ###   ########.fr       */
+/*   Updated: 2025/12/24 18:45:37 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <iostream>
 
 Contact::Contact() {}
 
@@ -62,4 +63,14 @@ const std::string& Contact::getSecret() const {
 
 void Contact::setSecret(const std::string& secret) {
 	_secret = secret;
+}
+
+void Contact::showContact(void) const {
+	std::cout << std::endl << "==================================" << std::endl;
+	std::cout << _fname << std::endl;
+	std::cout << _lname << std::endl;
+	std::cout << _nick << std::endl;
+	std::cout << _phoneNum << std::endl;
+	std::cout <<  _secret << std::endl;
+	std::cout << "==================================" << std::endl;
 }

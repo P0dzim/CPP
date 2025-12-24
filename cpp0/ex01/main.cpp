@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitosant <vitosant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:21:16 by vitosant          #+#    #+#             */
-/*   Updated: 2025/12/19 15:24:01 by vitosant         ###   ########.fr       */
+/*   Updated: 2025/12/24 19:23:27 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
+
+static void	errorMsg(void);
 
 int	main(void) {
 	PhoneBook	phone;
@@ -19,13 +21,22 @@ int	main(void) {
 
 	while (true)
 	{
-		std::cin >> command;
+		std::getline(std::cin, command);
 		if (command == "ADD")
-		{}
-		if (command == "SEARCH")
-		{}
-		if (command == "EXIT")
+			phone.addContact();
+		else if (command == "SEARCH")
+			phone.showList();
+		else if (command == "EXIT")
 			break ;
+		else
+			errorMsg();
 	}
 	return (0);
+}
+
+static void	errorMsg(void) {
+	std::cerr << std::endl << "Write a valid input" << std::endl;
+	std::cerr << "1) ADD" << std::endl;
+	std::cerr << "2) SEARCH" << std::endl;
+	std::cerr << "3) EXIT" << std::endl << std::endl;
 }

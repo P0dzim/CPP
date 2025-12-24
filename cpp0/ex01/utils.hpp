@@ -1,33 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 11:41:16 by vitosant          #+#    #+#             */
-/*   Updated: 2025/12/23 16:33:06 by vitor            ###   ########.fr       */
+/*   Created: 2025/12/23 16:59:47 by vitor             #+#    #+#             */
+/*   Updated: 2025/12/24 17:47:31 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Contact.hpp"
+#include <string>
 
-#define MAX_CONTACTS 8
-
-class PhoneBook {
-	private:
-		Contact	_contacts[MAX_CONTACTS];
-		int		_index;
-		int		_size;
-	public:
-		PhoneBook();
-		~PhoneBook();
-		int 		getIndex() const;
-		int 		getSize() const;
-		void		setIndex(int i);
-		void 		setSize(int i);
-		void		addContact(void);
-		Contact&	getContact(int index);
-		void		showList(void) const;
-};
+bool onlyDigits(const std::string& s);
+void trimStr(std::string& src);

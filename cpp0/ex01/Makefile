@@ -1,4 +1,4 @@
-CFLAGS	=	 -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS	=	 -Wall -Wextra -Werror -std=c++98
 NAME	=	PhoneBook
 SRC		=	Contact.cpp main.cpp  PhoneBook.cpp utils.cpp
 OBJ		=	${SRC:.cpp=.o}

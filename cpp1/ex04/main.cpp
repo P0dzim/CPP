@@ -6,11 +6,10 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 19:38:31 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/27 09:27:24 by vitor            ###   ########.fr       */
+/*   Updated: 2025/12/27 09:33:20 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iomanip>
 #include <iostream>
 #include <fstream>
 

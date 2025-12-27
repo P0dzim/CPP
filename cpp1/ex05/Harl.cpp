@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 09:42:32 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/27 11:13:33 by vitor            ###   ########.fr       */
+/*   Updated: 2025/12/27 11:39:51 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	Harl::complain( std::string level ) {
 			return ;
 		}
 	}
+	std::cerr << "Invalid level." << std::endl;
 }
 
 void Harl::debug( void ) {

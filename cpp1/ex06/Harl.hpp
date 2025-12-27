@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 09:40:09 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/27 11:32:37 by vitor            ###   ########.fr       */
+/*   Updated: 2025/12/27 12:08:10 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ class Harl {
 	public:
 		Harl( void );
 		~Harl( void );
-		void	complain( std::string level, std::string filter );
+		void	complain( std::string filter );
 };

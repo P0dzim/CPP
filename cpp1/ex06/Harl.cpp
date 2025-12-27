@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 09:42:32 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/27 11:39:42 by vitor            ###   ########.fr       */
+/*   Updated: 2025/12/27 12:10:13 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Harl::Harl( void ) {}
 
 Harl::~Harl( void ) {}
 
-void	Harl::complain( std::string level, std::string filter ) {
+void	Harl::complain( std::string filter ) {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	t_func		function[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	int			limit = 5;
@@ -26,11 +26,8 @@ void	Harl::complain( std::string level, std::string filter ) {
 	{
 		if (filter == levels[i])
 			limit = i;
-		if (level == levels[i] && i >= limit)
-		{
+		if (i >= limit)
 			(this->*function[i])();
-			return ;
-		}
 	}
 	if (limit == 5)
 		std::cerr << "Invalid filter." << std::endl;

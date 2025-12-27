@@ -1,5 +1,5 @@
 CFLAGS	=	 -Wall -Wextra -Werror -std=c++98
-NAME	=	zombies
+NAME	=	filter
 SRC		=	main.cpp
 OBJ		=	${SRC:.cpp=.o}
 

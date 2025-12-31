@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 12:33:11 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/31 13:19:32 by vitor            ###   ########.fr       */
+/*   Updated: 2025/12/31 13:34:58 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ DiamondTrap::DiamondTrap( void ) {
 	std::cout << "===DiamondTrap default constructor called===" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( const std::string& name ) {
-	setDiamondName(name);
-	setName(std::string(name + "_clap_name"));
+DiamondTrap::DiamondTrap( const std::string& name_ ) {
+	setDiamondName(name_);
+	setName(std::string(name_ + "_clap_name"));
 	setHit(100);
 	setEnergy(50);
 	setAttack(30);
@@ -52,8 +52,8 @@ std::string DiamondTrap::getDiamondName( void ) const {
 	return (this->name);
 }
 
-void	DiamondTrap::setDiamondName( const std::string& name ) {
-	this->name = name;
+void	DiamondTrap::setDiamondName( const std::string& name_ ) {
+	name = name_;
 }
 
 void	DiamondTrap::whoAmI( void ) const {

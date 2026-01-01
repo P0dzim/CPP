@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 14:11:52 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/31 13:23:40 by vitor            ###   ########.fr       */
+/*   Updated: 2026/01/01 09:56:47 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ class ScavTrap : virtual public ClapTrap{
 		~ScavTrap( void );
 
 		void	guardGate( void );
+		void	attack( const std::string& target );
 };

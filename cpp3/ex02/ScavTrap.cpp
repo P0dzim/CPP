@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 14:17:10 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/30 14:44:09 by vitor            ###   ########.fr       */
+/*   Updated: 2026/01/01 09:49:31 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ ScavTrap::ScavTrap( const std::string& name ) : ClapTrap(name) {
 	std::cout << "===ScavTrap constructor with name called===" << std::endl;
 }
 
-ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap(other) {}
+ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap(other) {
+	std::cout << "===ScavTrap copy constructor called===" << std::endl;
+}
 
 ScavTrap& ScavTrap::operator=( const ScavTrap& other ) {
 	setName(other.getName());
@@ -44,4 +46,21 @@ ScavTrap::~ScavTrap( void ) {
 
 void ScavTrap::guardGate( void ) {
 	std::cout << getName() << " on Gate keeper mode" << std::endl;
+}
+
+void	ScavTrap::attack( const std::string& target ) {
+	if (getHit() == 0)
+	{
+		std::cout << getName() << " has died!" << std::endl;
+		return ;
+	}
+	if (getEnergy() == 0)
+	{
+		std::cout << getName() << ':'
+			<<	" Low battery!" << std::endl;
+		return ;
+	}
+	std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing "
+			<< getAttack() << " points of damage!" << std::endl;
+	setEnergy(getEnergy() - 1);
 }

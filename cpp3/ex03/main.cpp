@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 13:52:54 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/31 13:23:46 by vitor            ###   ########.fr       */
+/*   Updated: 2026/01/01 09:57:24 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main( void ) {
 
 	DiamondTrap dr1("Marcos");
 	dr1.whoAmI();
+	dr1.attack("Augusto");
 
 	return (0);
 }

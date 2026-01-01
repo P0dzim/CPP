@@ -6,22 +6,29 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 11:34:06 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/31 12:31:51 by vitor            ###   ########.fr       */
+/*   Updated: 2026/01/01 09:43:23 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap( void ): _hit(10), _energy(10), _attack(0) {
+ClapTrap::ClapTrap( void ) {
+	_hit = 10;
+	_energy = 10;
+	_attack = 0;
 	std::cout << "===Default constructor called===" << std::endl;
 }
 
 
-ClapTrap::ClapTrap( const std::string& name ): _name(name), _hit(10), _energy(10), _attack(0){
+ClapTrap::ClapTrap( const std::string& name ) {
+	_name = name;
+	_hit = 10;
+	_energy = 10;
+	_attack = 0;
 	std::cout << "===Constructor with name called===" << std::endl;
 }
- 
+
 ClapTrap::ClapTrap( const ClapTrap& base ) {
 	_name = base.getName();
 	_hit = base.getHit();
@@ -86,7 +93,7 @@ void	ClapTrap::attack( const std::string& target ) {
 			<<	" Low battery!" << std::endl;
 		return ;
 	}
-	std::cout << getName() << " attacks " << target << ", causing "
+	std::cout << "ClapTrap " << getName() << " attacks " << target << ", causing "
 			<< getAttack() << " points of damage!" << std::endl;
 	setEnergy(getEnergy() - 1);
 }

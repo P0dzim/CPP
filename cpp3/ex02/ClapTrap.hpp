@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 11:02:54 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/30 13:57:09 by vitor            ###   ########.fr       */
+/*   Updated: 2026/01/01 09:48:44 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class ClapTrap {
 		void		setEnergy( const int energy );
 		void		setAttack( const int attack  );
 
-		void		attack( const std::string& target );
-		void		takeDamage( unsigned int amount );
-		void		beRepaired( unsigned int amount );
+		virtual void attack( const std::string& target );
+		void		 takeDamage( unsigned int amount );
+		void		 beRepaired( unsigned int amount );
 };

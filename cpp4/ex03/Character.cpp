@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 19:40:55 by vitor             #+#    #+#             */
-/*   Updated: 2026/01/02 18:57:25 by vitor            ###   ########.fr       */
+/*   Updated: 2026/01/02 20:17:46 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,14 +104,14 @@ void	Character::equip( AMateria* m ) {
 	}
 	if (!m)
 	{
-		std::cout << "Invalid weapon" << std::endl;
+		std::cout << getName() << ": Invalid materia" << std::endl;
 		return ;
 	}
 	for (int j = 0; j < 5; j++)
 	{
 		if (j == 4 || _inventory[j] == m)
 		{
-			std::cout << "Couldn't equip " << m->getType() << " weapon" << std::endl;
+			std::cout << "Couldn't equip " << m->getType() << " materia" << std::endl;
 			return ;		
 		}
 		if (_inventory[j])
@@ -124,7 +124,12 @@ void	Character::equip( AMateria* m ) {
 
 void	Character::unequip( int idx ) {
 	if (idx < 0 || idx > 3)
+	{
+		std::cout << "Invalid " << idx << " index"<< std::endl;
 		return ;
+	}
+	if (_inventory[idx])
+		setFreeSlots(getFreeSlots() + 1);
 	_inventory[idx] = 0;
 }
 
@@ -132,5 +137,5 @@ void	Character::use( int idx, ICharacter& target ) {
 	if (!(idx < 0 || idx > 3) && _inventory[idx])
 		_inventory[idx]->use(target);
 	else
-		std::cout << "Couldn't use item with " << idx << " index"<< std::endl;
+		std::cout << getName() << ": Couldn't use item with " << idx << " index"<< std::endl;
 }

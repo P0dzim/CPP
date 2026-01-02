@@ -1,4 +1,4 @@
-CFLAGS	=	 -Wall -Wextra -Werror -std=c++98 -g3
+CFLAGS	=	 -Wall -Wextra -Werror -std=c++98
 NAME	=	a.out
 SRC		=	MateriaSource.cpp Cure.cpp Ice.cpp main.cpp Character.cpp AMateria.cpp
 OBJ		=	${SRC:.cpp=.o}

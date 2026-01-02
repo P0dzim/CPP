@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 11:34:03 by vitor             #+#    #+#             */
-/*   Updated: 2026/01/01 11:38:16 by vitor            ###   ########.fr       */
+/*   Updated: 2026/01/02 13:20:20 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void	WrongAnimal::setType( const std::string& type ) {
 }
 
 void	WrongAnimal::makeSound( void ) const {
-	std::cout << "owidhopdwifewhqfo" << std::endl;
+	std::cout << "no sound" << std::endl;
 }

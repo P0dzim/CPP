@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/01 17:10:22 by vitor             #+#    #+#             */
-/*   Updated: 2026/01/02 18:31:29 by vitor            ###   ########.fr       */
+/*   Created: 2026/01/02 13:59:26 by vitor             #+#    #+#             */
+/*   Updated: 2026/01/02 14:54:11 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "ICharacter.hpp"
-#include "AMateria.hpp"
 #include <string>
+#include "IMateriaSource.hpp"
+#include "AMateria.hpp"
 
-class Character : public ICharacter {
+class MateriaSource : public IMateriaSource {
 	private:
-		std::string _name;
-		AMateria*	_inventory[4];
+		AMateria*	_slots[4];
 		int			_freeSlots;
 		int			getFreeSlots( void ) const;
-		void		setFreeSlots( const int freeSlots );
+		void		setFreeSlots( const int idx );
 		AMateria*	getSlot( const int idx ) const;
-		void		setSlot( const int idx, AMateria* m);
+		void		setSlot( const int idx, AMateria* m );
 	public:
-		Character( void );
-		Character( const std::string& name );
-		Character( const Character& base );
-		Character& operator=( const Character& other );
-		~Character( void );
+		MateriaSource( void );
+		MateriaSource( const MateriaSource& base );
+		MateriaSource& operator=( const MateriaSource& other );
+		~MateriaSource( void );
 
-		std::string const & getName( void ) const;
-
-		void 				equip( AMateria* m );
-		void 				unequip( int idx );
-		void				use(int idx, ICharacter& target);
+		void		learnMateria( AMateria* );
+		AMateria*	createMateria( std::string const & type );
 };

@@ -6,13 +6,13 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 14:49:49 by vitor             #+#    #+#             */
-/*   Updated: 2026/01/01 14:50:57 by vitor            ###   ########.fr       */
+/*   Updated: 2026/01/02 17:25:43 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
-#include "AMateria.hpp"
+class AMateria;
 
 class ICharacter
 {

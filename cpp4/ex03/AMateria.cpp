@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 17:30:48 by vitor             #+#    #+#             */
-/*   Updated: 2026/01/01 17:39:51 by vitor            ###   ########.fr       */
+/*   Updated: 2026/01/02 17:42:23 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,8 @@ AMateria::~AMateria( void ) {}
 
 std::string const & AMateria::getType() const {
 	return (_type);
+}
+
+void	AMateria::use( ICharacter& target ) {
+	(void) target;
 }

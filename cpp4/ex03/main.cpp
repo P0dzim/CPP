@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 16:52:38 by vitor             #+#    #+#             */
-/*   Updated: 2026/01/02 20:14:38 by vitor            ###   ########.fr       */
+/*   Created: 2026/01/09 14:32:21 by vitosant          #+#    #+#             */
+/*   Updated: 2026/01/09 14:32:22 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Character.hpp"
 #include "MateriaSource.hpp"

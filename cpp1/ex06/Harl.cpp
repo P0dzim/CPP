@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 09:42:32 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/27 12:10:13 by vitor            ###   ########.fr       */
+/*   Created: 2026/01/07 17:42:47 by vitosant          #+#    #+#             */
+/*   Updated: 2026/01/09 14:15:51 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,28 @@ Harl::~Harl( void ) {}
 void	Harl::complain( std::string filter ) {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	t_func		function[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	int			limit = 5;
+	int			find = 0;
+	int			limit = 0;
 
-	for (int i = 0; i < 4; i++)
+	while (limit < 4 && !find)
 	{
-		if (filter == levels[i])
-			limit = i;
-		if (i >= limit)
-			(this->*function[i])();
+		find = (filter == levels[limit]);
+		limit++;
 	}
-	if (limit == 5)
-		std::cerr << "Invalid filter." << std::endl;
+	switch (limit - find)
+	{
+		case 0:
+		  (this->*function[0])();
+		case 1:
+		  (this->*function[1])();
+		case 2:
+		  (this->*function[2])();
+		case 3:
+		  (this->*function[3])();
+		  break;
+		default:
+			std::cerr << "Invalid filter." << std::endl;
+	}
 }
 
 void Harl::debug( void ) {

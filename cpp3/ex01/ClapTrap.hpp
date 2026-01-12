@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/30 11:02:54 by vitor             #+#    #+#             */
-/*   Updated: 2026/01/01 09:41:49 by vitor            ###   ########.fr       */
+/*   Created: 2026/01/08 13:52:40 by vitosant          #+#    #+#             */
+/*   Updated: 2026/01/08 13:52:43 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class ClapTrap {
 		void		setEnergy( const int energy );
 		void		setAttack( const int attack  );
 
-		virtual void attack( const std::string& target );
-		void		 takeDamage( unsigned int amount );
-		void		 beRepaired( unsigned int amount );
+		void		attack( const std::string& target );
+		void		takeDamage( unsigned int amount );
+		void		beRepaired( unsigned int amount );
 };

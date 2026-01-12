@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/30 11:34:06 by vitor             #+#    #+#             */
-/*   Updated: 2026/01/01 09:43:23 by vitor            ###   ########.fr       */
+/*   Created: 2026/01/08 13:47:26 by vitosant          #+#    #+#             */
+/*   Updated: 2026/01/08 13:52:20 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap( void ) {
 	_hit = 10;
 	_energy = 10;
 	_attack = 0;
-	std::cout << "===Default constructor called===" << std::endl;
+	std::cout << "===ClapTrap default constructor called===" << std::endl;
 }
 
 
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap( const std::string& name ) {
 	_hit = 10;
 	_energy = 10;
 	_attack = 0;
-	std::cout << "===Constructor with name called===" << std::endl;
+	std::cout << "===ClapTrap constructor with name called===" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& base ) {
@@ -34,7 +34,7 @@ ClapTrap::ClapTrap( const ClapTrap& base ) {
 	_hit = base.getHit();
 	_energy = base.getEnergy();
 	_attack = base.getAttack();
-	std::cout << "===Copy constructor called===" << std::endl;
+	std::cout << "===ClapTrap copy constructor called===" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=( const ClapTrap& base ) {
@@ -46,7 +46,7 @@ ClapTrap& ClapTrap::operator=( const ClapTrap& base ) {
 }
 
 ClapTrap::~ClapTrap( void ) {
-	std::cout << "==Destructor called===" << std::endl;
+	std::cout << "==ClapTrap destructor called===" << std::endl;
 }
 
 std::string ClapTrap::getName( void ) const {

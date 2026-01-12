@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/01 10:11:48 by vitor             #+#    #+#             */
-/*   Updated: 2026/01/01 11:37:55 by vitor            ###   ########.fr       */
+/*   Created: 2026/01/09 14:22:31 by vitosant          #+#    #+#             */
+/*   Updated: 2026/01/09 14:22:34 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #pragma once
 #include "Animal.hpp"

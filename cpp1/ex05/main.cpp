@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 11:13:42 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/30 10:26:57 by vitor            ###   ########.fr       */
+/*   Created: 2026/01/07 18:06:42 by vitosant          #+#    #+#             */
+/*   Updated: 2026/01/07 18:15:00 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ int	main( void ) {
 	Harl		notify;
 	std::string	command;
 
+	std::cout << "===OPTIONS===" << std::endl
+			  << "DEBUG" << std::endl
+			  << "INFO" << std::endl
+			  << "WARNING" << std::endl
+			  << "ERROR" <<	std::endl
+			  << "=============" << std::endl;
 	while (std::getline(std::cin, command))
 		notify.complain(command);
 	return (0);

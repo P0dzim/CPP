@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/30 13:52:54 by vitor             #+#    #+#             */
-/*   Updated: 2025/12/31 13:25:09 by vitor            ###   ########.fr       */
+/*   Created: 2026/01/08 13:52:51 by vitosant          #+#    #+#             */
+/*   Updated: 2026/01/08 13:55:05 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "ClapTrap.hpp"
 #include <iostream>

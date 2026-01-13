@@ -6,7 +6,7 @@
 /*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 14:08:57 by vitosant          #+#    #+#             */
-/*   Updated: 2026/01/08 14:09:01 by vitosant         ###    ########.fr      */
+/*   Updated: 2026/01/13 09:56:18 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class DiamondTrap : public FragTrap, public ScavTrap {
 	private:
-		std::string name;
+		std::string _name;
 	public:
 		DiamondTrap( void );
 		DiamondTrap( const std::string& name_ );

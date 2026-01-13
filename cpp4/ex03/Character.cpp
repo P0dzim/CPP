@@ -6,7 +6,7 @@
 /*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 14:31:06 by vitosant          #+#    #+#             */
-/*   Updated: 2026/01/09 14:31:06 by vitosant         ###    ########.fr      */
+/*   Updated: 2026/01/13 10:43:09 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ Character::Character( const std::string& name ) : _name(name), _freeSlots(4) {
 
 Character::Character( const Character& base ) : _name(base.getName()), _freeSlots(base.getFreeSlots()) {
 	std::cout << "===COPY CONSTRUCTOR===" << std::endl << "memory addresses" << std::endl;
+	if (base.getFreeSlots() == 4)
+		return ;
 	for (int j = 0; j < 4; j++)
 	{
-		if (!base.getFreeSlots())
-			break;
 		if (base.getSlot(j))
 			_inventory[j] = base.getSlot(j)->clone();
 		else
@@ -107,13 +107,8 @@ void	Character::equip( AMateria* m ) {
 		std::cout << getName() << ": Invalid materia" << std::endl;
 		return ;
 	}
-	for (int j = 0; j < 5; j++)
+	for (int j = 0; j < 4; j++)
 	{
-		if (j == 4 || _inventory[j] == m)
-		{
-			std::cout << "Couldn't equip " << m->getType() << " materia" << std::endl;
-			return ;		
-		}
 		if (_inventory[j])
 			continue ;
 		setSlot(j, m);

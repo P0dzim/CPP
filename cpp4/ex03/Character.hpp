@@ -6,7 +6,7 @@
 /*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 14:31:15 by vitosant          #+#    #+#             */
-/*   Updated: 2026/01/09 14:31:16 by vitosant         ###    ########.fr      */
+/*   Updated: 2026/01/13 10:43:18 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Character : public ICharacter {
 		std::string _name;
 		AMateria*	_inventory[4];
 		int			_freeSlots;
-		int			getFreeSlots( void ) const;
 		void		setFreeSlots( const int freeSlots );
+		int			getFreeSlots( void ) const;
 		AMateria*	getSlot( const int idx ) const;
 		void		setSlot( const int idx, AMateria* m);
 	public:

@@ -6,7 +6,7 @@
 /*   By: vitosant <vitosant@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 14:32:21 by vitosant          #+#    #+#             */
-/*   Updated: 2026/01/09 14:32:22 by vitosant         ###    ########.fr      */
+/*   Updated: 2026/01/13 10:47:32 by vitosant         ###    ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,9 @@ int main()
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
 
-		ICharacter* me = new Character("Alice");
+		ICharacter	*me = new Character("Alice");
 		Character	p2("Cordelia");
-		AMateria *tmp;
+		AMateria	*tmp;
 		
 		tmp = src->createMateria("ice");
 		me->equip(tmp);

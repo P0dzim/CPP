@@ -17,9 +17,10 @@
 #include <cstddef>
 #include <cstdlib>
 #include <ctime>
+#include <exception>
 #include <iostream>
 
-Base*	genObj( void )
+Base*	generate( void )
 {
 	int	num = std::rand() % 3;
 
@@ -36,15 +37,39 @@ Base*	genObj( void )
 	}
 }
 
-char	identifier(Base *ptr)
+void	identify(Base *ptr)
 {
 	if (dynamic_cast<A *>(ptr))
-		return ('A');
+		std::cout << 'A';
 	if (dynamic_cast<B *>(ptr))
-		return ('B');
+		std::cout << 'B';
 	if (dynamic_cast<C *>(ptr))
-		return ('C');
-	return ('F');
+		std::cout << 'C';
+}
+
+void	identify(Base &ptr)
+{
+	try
+	{
+		A& a = dynamic_cast<A&>(ptr);
+		(void) a;
+		std::cout << 'A' << std::endl;
+	}
+	catch(std::exception& e) {}
+	try
+	{
+		B& b = dynamic_cast<B&>(ptr);
+		(void) b;
+		std::cout << 'B' << std::endl;
+	}
+	catch(std::exception& e) {}
+	try
+	{
+		C& c = dynamic_cast<C&>(ptr);
+		(void) c;
+		std::cout << 'C' << std::endl;
+	}
+	catch(std::exception& e) {}
 }
 
 int	main( void )
@@ -54,8 +79,13 @@ int	main( void )
 
 	for (int i = 0; i < 10; i++)
 	{
-		ptr = genObj();
-		std::cout << "TEST " << i + 1 << ": " << identifier(ptr) << std::endl;
+		ptr = generate();
+		Base&	ref = *ptr;
+
+		std::cout << "TEST " << i + 1 << ": " << "ptr ";
+		identify(ptr);
+		std::cout << " ref ";
+		identify(ref);
 		delete (ptr);
 	}
 	return (0);

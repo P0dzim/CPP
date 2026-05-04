@@ -34,7 +34,8 @@ int	main( void )
 
 		for (int i = 0; i < 10; i++)
 			arr[i] = i;
-		std::cout << "modifying original" << std::endl;
+		std::cout << "modifying original..." << std::endl;
+		std::cout << "modifying copy..." << std::endl;
 		printArr(10, arr, "ORIGINAL: ");
 		printArr(10, cpy, "COPY: ");
 	}
@@ -43,7 +44,7 @@ int	main( void )
 		std::string lst1[10] = {"A", "minha", "casa", "e", "amarela", "entao", "ela", "nao", "e", "branca"};
 		std::string lst2[10] = {"A", "minha", "casa", "e", "azul", "entao", "ela", "nao", "e", "verde"};
 		Array<std::string> arr(10);
-		Array<std::string> cpy(arr);
+		Array<std::string> cpy = arr;
 		std::cout << "===========STRING===========" << std::endl;
 		printArr(10, arr, "ORIGINAL: ");
 		printArr(10, cpy, "COPY: ");
@@ -60,7 +61,8 @@ int	main( void )
 
 	{
 		Array<char> arr(10);
-		std::cout << "==========ERROR===========" << std::endl;
+		std::cout << "================ERROR=================" << std::endl;
+		std::cout << "trying access a invalid index: ";
 		try
 		{
 			arr[11];

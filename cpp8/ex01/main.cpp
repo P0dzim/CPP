@@ -58,7 +58,7 @@ int main()
 		}
 		catch( std::exception& e )
 		{
-			std::cout << "ERROR" << std::endl;
+			std::cout << "ERROR: not enough space" << std::endl;
 		}
 		try {
 			empty.addNumber(42);
@@ -68,7 +68,24 @@ int main()
 		}
 		catch( std::exception& e )
 		{
-			std::cout << "ERROR" << std::endl;
+			std::cout << "ERROR: not enough space" << std::endl;
+		}
+		empty = Span();
+		try
+		{
+			std::cout << "SHORTEST: " <<  empty.shortestSpan() << std::endl;
+		}
+		catch(std::exception& e)
+		{
+			std::cout << "ERROR: container is empty" << std::endl;
+		}
+		try
+		{
+			std::cout << "LONGEST: " <<  empty.longestSpan() << std::endl;
+		}
+		catch(std::exception& e)
+		{
+			std::cout << "ERROR: container is empty" << std::endl;
 		}
 	}
 	return (0);

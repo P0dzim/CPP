@@ -20,6 +20,11 @@ void	sumOne( int& num )
 	num++;
 }
 
+void	sumOneConst( const int& num )
+{
+	(void) num;
+}
+
 void	ft_tolower( char& c )
 {
 	c = tolower(c);
@@ -38,6 +43,13 @@ int	main( void )
 		printArr(arr, 10);
 		iter(arr, 10, sumOne);
 		printArr(arr, 10);
+		std::cout << std::endl;
+
+		const int const_arr[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+		std::cout << "=========" << "CONST INTEGER ARRAY" << "=========" << std::endl;
+		printArr(const_arr, 10);
+		iter(const_arr, 10, sumOneConst);
+		printArr(const_arr, 10);
 		std::cout << std::endl;
 	}
 	{

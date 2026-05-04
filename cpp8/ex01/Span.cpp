@@ -13,7 +13,6 @@
 #include "Span.hpp"
 #include <algorithm>
 #include <cstddef>
-#include <cstdlib>
 #include <exception>
 #include <iostream>
 #include <vector>
@@ -43,6 +42,7 @@ void Span::addNumber( const int n )
 
 std::size_t	Span::shortestSpan( void )
 {
+	if (_vec.size() <= 1) throw std::exception();
 	std::vector<int>	sorted(_vec);
 	std::size_t			shortest = -1;
 

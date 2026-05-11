@@ -26,10 +26,10 @@ class	BitcoinExchange{
 
 		void	addData( const std::string& key, const std::string& value );
 		void	loadData( const std::string& data = "data.csv" );
-		void	findData( const std::string& input );
-
+		void	readInput( const char *inputFile ) const;
+		void	findData( const std::string& line ) const;
 		const std::map<std::time_t, long double>& getData( void ) const;
 };
 
 bool	checkDate( const std::string& date, std::time_t& time );
-bool	checkValue( const std::string& value, long double& val, const bool& isData);
+bool	checkValue( const std::string& value, long double& val, const bool& isLimited );

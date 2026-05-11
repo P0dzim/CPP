@@ -11,9 +11,11 @@
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include <cctype>
 #include <cerrno>
 #include <cmath>
 #include <cstdlib>
+#include <exception>
 #include <iomanip>
 #include <ios>
 #include <iostream>
@@ -37,14 +39,17 @@ void	ScalarConverter::convert( std::string str )
 	char	*end;
 	double	num;
 
-	if (str.length() == 1)
-		num = static_cast<int>(str.at(0));
+	if (str.length() == 1 && !std::isdigit(str.at(0)))
+		num = static_cast<double>(str.at(0));
 	else
 	{
-		num = std::strtod(str.c_str(), &end);
-		if (errno)
+		try
 		{
-			std::cout << "Error: buffer overflow" << std::endl;
+			num = std::strtod(str.c_str(), &end);
+		}
+		catch( std::exception& e )
+		{
+			std::cerr << e.what() << std::endl;
 			return ;
 		}
 		if ((*end != 'f' && *end != '\0') || (*end != '\0' && *(end + 1) != '\0'))

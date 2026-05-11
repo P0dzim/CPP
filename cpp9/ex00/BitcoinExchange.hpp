@@ -13,10 +13,11 @@
 #pragma once
 #include <map>
 #include <string>
+#include <ctime>
 
 class	BitcoinExchange{
 	private:
-		std::map<std::string, long double> _data;
+		std::map<std::time_t, long double> _data;
 	public:
 		BitcoinExchange( void );
 		BitcoinExchange( const BitcoinExchange& base );
@@ -24,10 +25,11 @@ class	BitcoinExchange{
 		~BitcoinExchange( void );
 
 		void	addData( const std::string& key, const std::string& value );
-		void	loadData( const std::string& data );
+		void	loadData( const std::string& data = "data.csv" );
+		void	findData( const std::string& input );
 
-		const std::map<std::string, long double>& getData( void ) const;
+		const std::map<std::time_t, long double>& getData( void ) const;
 };
 
-bool	checkDate( const std::string& date );
-bool	checkValue( const std::string& value, long double& val );
+bool	checkDate( const std::string& date, std::time_t& time );
+bool	checkValue( const std::string& value, long double& val, const bool& isData);

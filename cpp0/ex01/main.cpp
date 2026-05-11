@@ -13,7 +13,7 @@
 #include "PhoneBook.hpp"
 #include <iostream>
 
-static void	errorMsg(void);
+static void	menuMsg(void);
 
 int	main(void) {
 	PhoneBook	phone;
@@ -21,6 +21,7 @@ int	main(void) {
 
 	while (true)
 	{
+		menuMsg();
 		std::getline(std::cin, command);
 		if (command == "ADD")
 			phone.addContact();
@@ -28,15 +29,14 @@ int	main(void) {
 			phone.showList();
 		else if (command == "EXIT")
 			break ;
-		else
-			errorMsg();
 	}
 	return (0);
 }
 
-static void	errorMsg(void) {
-	std::cerr << std::endl << "Write a valid input" << std::endl;
-	std::cerr << "1) ADD" << std::endl;
-	std::cerr << "2) SEARCH" << std::endl;
-	std::cerr << "3) EXIT" << std::endl << std::endl;
+static void	menuMsg(void) {
+	std::cout << std::endl << "====" << "MENU" << "====" <<  std::endl;
+	std::cout << "ADD" << std::endl;
+	std::cout << "SEARCH" << std::endl;
+	std::cout << "EXIT" << std::endl;
+	std::cout << "============" << std::endl << std::endl;
 }

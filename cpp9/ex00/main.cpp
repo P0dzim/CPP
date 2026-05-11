@@ -21,12 +21,12 @@ int	main( int ac, char **av )
 	(void) av;
 	if (ac != 2)
 	{
-		std::cerr << "Invalid input. Try ./btc <valid file>" << std::endl;
+		std::cerr << "Error: could not open file." << std::endl;
 		return (1);
 	}
 	try {
 		exchange.loadData();
-		exchange.findData(av[1]);
+		exchange.readInput(av[1]);
 	} catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;

@@ -47,7 +47,6 @@ void PhoneBook::addContact(void) {
 	int			index;
 	std::string	input;
 
-	std::cin.ignore(); 
 	index = (_index + 1) % MAX_CONTACTS;
 	input = getInput("NAME");
 	_contacts[index].setFname(input);
@@ -107,7 +106,8 @@ static int selectContact(int size) {
 	while (true)
 	{
 		std::cout << "Select contact (index): ";
-		std::cin >> param;
+		std::getline(std::cin, param);
+		trimStr(param);
 		if (param.length() == 1 && onlyDigits(param))
 		{
 			index = param.at(0) - '0';

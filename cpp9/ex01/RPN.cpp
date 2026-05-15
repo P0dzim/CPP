@@ -35,7 +35,7 @@ RPN& RPN::operator=( const RPN& other )
 
 static long	operation(const char op, const long& num1, const long& num2)
 {
-	long ret;
+	long ret = 0;
 
 	switch (op)
 	{
@@ -46,7 +46,7 @@ static long	operation(const char op, const long& num1, const long& num2)
 			ret = num1 - num2;
 			break;
 		case '/':
-			if (num2 == 0)	throw std::runtime_error("Error: division by zero.");
+			if (num2 == 0)	throw std::runtime_error("Error: Division by zero.");
 			ret = num1 / num2;
 			break;
 		case '*':
@@ -86,11 +86,11 @@ void	RPN::calculation( std::string input )
 			i++;
 		}
 		else
-		{
-			if (input[i] == ' ') i++;
-			else throw std::runtime_error("Error");
-		}
+			throw std::runtime_error("Error");
+		if (input[i] != '\0' && input[i] != ' ')
+			throw std::runtime_error("Error: Expected space or null after char.");
+		i++;
 	}
-	if (_stack.size() != 1)	throw std::runtime_error("Syntax Error: Missing operator in expression.");
+	if (_stack.size() != 1)	throw std::runtime_error("Error: Missing operator in expression.");
 	std::cout << _stack.top() << std::endl;
 }

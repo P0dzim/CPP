@@ -74,7 +74,7 @@ void	RPN::calculation( std::string input )
 			long	num2;
 			long	result;
 
-			if (_stack.size() < 2) throw std::runtime_error("Error: invalid sintaxe.");
+			if (_stack.size() < 2) throw std::runtime_error("Error: Invalid sintaxe.");
 
 			num2 = _stack.top();
 			_stack.pop();
@@ -88,7 +88,7 @@ void	RPN::calculation( std::string input )
 		else
 			throw std::runtime_error("Error");
 		if (input[i] != '\0' && input[i] != ' ')
-			throw std::runtime_error("Error: Expected space or null after char.");
+			throw std::runtime_error("Error: Expected space between numbers and operators.");
 		i++;
 	}
 	if (_stack.size() != 1)	throw std::runtime_error("Error: Missing operator in expression.");

@@ -1,4 +1,4 @@
-CFLAGS	=	 -Wall -Wextra -Werror -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 NAME	=	RPN
 SRC		=	main.cpp RPN.cpp
 OBJ		=	${SRC:.cpp=.o}

@@ -27,8 +27,8 @@ int	main( void )
 		{
 			try
 			{
-			std::vector<int>::iterator	addr = easyfind(arr, i);
-			std::cout << "O valor " << i << " está na posição número: " << addr - arr.begin() << std::endl;
+				std::vector<int>::iterator	addr = easyfind(arr, i);
+				std::cout << "O valor " << i << " está na posição número: " << addr - arr.begin() << std::endl;
 			}
 			catch(std::exception& e)
 			{

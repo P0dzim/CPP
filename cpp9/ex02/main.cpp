@@ -37,7 +37,7 @@ int	main( int ac, char **av )
 		return (1);
 	}
 
-	PmergeMe::merge_sort(arr);
+	PmergeMe::makeContainers(arr);
 	return (0);
 }
 

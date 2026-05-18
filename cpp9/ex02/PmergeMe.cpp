@@ -11,7 +11,11 @@
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+#include <algorithm>
+#include <cmath>
 #include <cstddef>
+#include <list>
+#include <utility>
 #include <vector>
 
 PmergeMe::PmergeMe( void ) {}
@@ -29,12 +33,59 @@ PmergeMe& PmergeMe::operator=( const PmergeMe& other )
 	return (*this);
 }
 
-void PmergeMe::merge_sort( std::vector<long> &arr )
+void PmergeMe::makeContainers( std::vector<long> &arr )
 {
+	std::list<long>	lst;
+	for(std::size_t i = 0; i < arr.size(); i++)
+		lst.push_back(arr.at(i));
+
 
 }
 
-static std::vector<long> jacobsthal_sequence( std::size_t len )
+void	mergeInsertionSort( std::vector<std::pair<long, long>>& cont, bool is_odd = false, long num = 0 )
+{
+	std::vector<std::pair<long, long>>							winners, losers;
+	typename std::vector<std::pair<long, long>>::iterator		iter = cont.begin();
+
+	std::pair<long, long>	num1, num2;
+
+	while (iter != cont.end())
+	{
+		num1 = *iter;
+		iter++;
+		if (iter == cont.end())
+		{
+			losers.push_back(num1);
+			break ;
+		}
+		num2 = *iter;
+		iter++;
+
+		if (num1 > num2)
+		{
+			winners.push_back(num1);
+			losers.push_back(num2);
+		}
+		else
+		{
+			winners.push_back(num2);
+			losers.push_back(num1);
+		}
+	}
+	if (winners.size() > 1)
+		mergeInsertionSort(winners);
+
+	std::vector<long>	jacob = jacobsthal_sequence(losers.size());
+	std::vector<long> index_sequence;
+	for (std::size_t i = 0; i < jacob.size(); i++)
+	{
+		long jacob_val = jacob[i];
+
+		std::vector<std::pair<long, long>>::iterator pos =  std::lower_bound(winners.begin(), winners.begin() + jacob_val, jacob_val);
+	}
+}
+
+std::vector<long>	jacobsthal_sequence( std::size_t len )
 {
 	std::vector<long> sequence;
 
@@ -47,7 +98,7 @@ static std::vector<long> jacobsthal_sequence( std::size_t len )
 	while (i < len)
 	{
 		i = sequence.back() + 2 * sequence.at(sequence.size() - 2);
-		sequence.push_back(i);
+		sequence.push_back(std::min(i, len));
 	}
 	return (sequence);
 }

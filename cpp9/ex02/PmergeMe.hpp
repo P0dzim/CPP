@@ -22,5 +22,7 @@ class PmergeMe
 		~PmergeMe( void );
 
 	public:
-		static void merge_sort( std::vector<long>& arr );
+		static void makeContainers( std::vector<long>& arr );
 };
+
+std::vector<long> jacobsthal_sequence( std::size_t len );

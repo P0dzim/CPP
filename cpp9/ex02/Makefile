@@ -1,6 +1,6 @@
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
 NAME	=	PmergeMe
-SRC		=	main.cpp
+SRC		=	main.cpp PmergeMe.cpp
 OBJ		=	${SRC:.cpp=.o}
 
 all: $(NAME)

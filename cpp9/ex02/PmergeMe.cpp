@@ -14,8 +14,11 @@
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
-#include <list>
-#include <utility>
+#include <cstring>
+#include <ctime>
+#include <sys/time.h>
+#include <iostream>
+#include <ostream>
 #include <vector>
 
 PmergeMe::PmergeMe( void ) {}
@@ -33,56 +36,28 @@ PmergeMe& PmergeMe::operator=( const PmergeMe& other )
 	return (*this);
 }
 
-void PmergeMe::makeContainers( std::vector<long> &arr )
+static long	time_ms(void)
 {
-	std::list<long>	lst;
-	for(std::size_t i = 0; i < arr.size(); i++)
-		lst.push_back(arr.at(i));
+	struct timeval	now;
+	long			time;
 
-
+	std::memset(&now, 0, sizeof(struct timeval));
+	gettimeofday(&now, NULL);
+	time = now.tv_sec * 1000 + now.tv_usec / 1000;
+	return (time);
 }
 
-void	mergeInsertionSort( std::vector<std::pair<long, long>>& cont, bool is_odd = false, long num = 0 )
+void PmergeMe::makeContainers( std::vector<t_vec_node> &vec )
 {
-	std::vector<std::pair<long, long>>							winners, losers;
-	typename std::vector<std::pair<long, long>>::iterator		iter = cont.begin();
+	long time1, time2;
 
-	std::pair<long, long>	num1, num2;
+	std::cout << "time ms vec: ";
+	time1 = time_ms();
+	mergeInsertionSort(vec);
+	time2 = time_ms();
 
-	while (iter != cont.end())
-	{
-		num1 = *iter;
-		iter++;
-		if (iter == cont.end())
-		{
-			losers.push_back(num1);
-			break ;
-		}
-		num2 = *iter;
-		iter++;
+	std::cout << time2 - time1 << std::endl;
 
-		if (num1 > num2)
-		{
-			winners.push_back(num1);
-			losers.push_back(num2);
-		}
-		else
-		{
-			winners.push_back(num2);
-			losers.push_back(num1);
-		}
-	}
-	if (winners.size() > 1)
-		mergeInsertionSort(winners);
-
-	std::vector<long>	jacob = jacobsthal_sequence(losers.size());
-	std::vector<long> index_sequence;
-	for (std::size_t i = 0; i < jacob.size(); i++)
-	{
-		long jacob_val = jacob[i];
-
-		std::vector<std::pair<long, long>>::iterator pos =  std::lower_bound(winners.begin(), winners.begin() + jacob_val, jacob_val);
-	}
 }
 
 std::vector<long>	jacobsthal_sequence( std::size_t len )
@@ -91,14 +66,30 @@ std::vector<long>	jacobsthal_sequence( std::size_t len )
 
 	sequence.push_back(1);
 	if (len == 1) return(sequence);
-	sequence.push_back(3);
+		sequence.push_back(std::min(len, static_cast<std::size_t>(3)));
 	if (len <= 3) return (sequence);
 
 	std::size_t i = 0;
 	while (i < len)
 	{
 		i = sequence.back() + 2 * sequence.at(sequence.size() - 2);
-		sequence.push_back(std::min(i, len));
+		sequence.push_back(std::min(len, i));
 	}
 	return (sequence);
+}
+
+std::vector<long>	make_idx_sequence( std::size_t len )
+{
+	std::vector<long>	jacob;
+	std::vector<long>	index_sequence;
+
+	jacob = jacobsthal_sequence(len);
+	for (std::size_t i = 1; i < jacob.size(); i++)
+	{
+		long	jacob_val = jacob[i] - 1;
+
+		for (long j = jacob_val; j >= jacob[i - 1]; --j)
+			index_sequence.push_back(j);
+	}
+	return (index_sequence);
 }
